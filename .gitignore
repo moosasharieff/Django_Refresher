@@ -7,4 +7,5 @@
 # ignoring folders
 level_two/__pycache__/
 level_two/migrations/__pycache__/
-.idea
+.idea/*
+.idea/test_project01.iml
