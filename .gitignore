@@ -1,0 +1,10 @@
+
+# ignoring files
+
+*.pyc
+*/__pycache__/*
+
+# ignoring folders
+level_two/__pycache__/
+level_two/migrations/__pycache__/
+.idea
