@@ -18,6 +18,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Template Directories
 HOME_TEMPLATE_DIR = Path.joinpath(BASE_DIR, 'templates')
 TP01_APP1_TEMPLATE_DIR = Path.joinpath(BASE_DIR, 'level_one/templates')
+LEVEL_TWO = Path.joinpath(BASE_DIR, 'level_two/templates')
 
 # Static Directories
 TP01_APP1_STATIC_DIR = Path.joinpath(BASE_DIR, 'level_one/static')
@@ -62,7 +63,7 @@ ROOT_URLCONF = 'test_project01.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [HOME_TEMPLATE_DIR, TP01_APP1_TEMPLATE_DIR],
+        'DIRS': [HOME_TEMPLATE_DIR, TP01_APP1_TEMPLATE_DIR, LEVEL_TWO],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

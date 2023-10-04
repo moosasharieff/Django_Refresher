@@ -8,6 +8,4 @@ def index(request):
     }
 
     # return HttpResponse("<em> Assalamualaikum Moosa !")
-    return render(request, 'index.html', context=my_dict)
-
-
+    return render(request, 'access_records.html', context=my_dict)

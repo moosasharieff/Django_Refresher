@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+    {% if access_records %}
+        <table class="access_table">
+            <thead>
+                <th>Company Name</th>
+                <th>Last Access Data</th>
+            </thead>
+
+        {% for ele in access_records %}
+            <tr>
+                <td> {{ ele.name }} </td>
+                <td> {{ ele.date }} </td>
+            </tr>
+        {% endfor %}
+    {% else %}
+        <p>NO RECORDS FOUND</p>
+        </table>
+    {% endif %}
+
+
+</body>
+</html>
