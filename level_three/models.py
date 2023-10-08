@@ -1,8 +1,9 @@
 from django.db import models
+from level_three.validators import check_for_m
 
 # Create your models here.
 class User(models.Model):
-    first_name = models.CharField(max_length=26)
+    first_name = models.CharField(max_length=26, validators=[check_for_m])
     last_name = models.CharField(max_length=26)
     email = models.EmailField(unique=True)
 
