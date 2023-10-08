@@ -12,5 +12,3 @@ def index(request):
     records = AccessRecords.objects.order_by('date')
     data_dict = {"access_records" : records}
     return render(request, "access_records.html", context=data_dict)
-
-
