@@ -23,6 +23,7 @@ LEVEL_THREE = Path.joinpath(BASE_DIR, 'level_three/templates')
 LEVEL_FOUR = Path.joinpath(BASE_DIR, 'level_four/templates')
 
 # Static Directories
+BASE_STATIC_DIR = Path.joinpath(BASE_DIR, "static/")
 TP01_APP1_STATIC_DIR = Path.joinpath(BASE_DIR, 'level_one/static')
 
 # Quick-start development settings - unsuitable for production
@@ -132,6 +133,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     TP01_APP1_STATIC_DIR,
+    BASE_STATIC_DIR,
+
 ]
 
 # Default primary key field type
