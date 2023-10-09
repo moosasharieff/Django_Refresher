@@ -21,10 +21,15 @@ TP01_APP1_TEMPLATE_DIR = Path.joinpath(BASE_DIR, 'level_one/templates')
 LEVEL_TWO = Path.joinpath(BASE_DIR, 'level_two/templates')
 LEVEL_THREE = Path.joinpath(BASE_DIR, 'level_three/templates')
 LEVEL_FOUR = Path.joinpath(BASE_DIR, 'level_four/templates')
+LEVEL_FIVE = Path.joinpath(BASE_DIR, 'level_five/templates')
 
 # Static Directories
 BASE_STATIC_DIR = Path.joinpath(BASE_DIR, "static/")
 TP01_APP1_STATIC_DIR = Path.joinpath(BASE_DIR, 'level_one/static')
+
+# Media File(Static files uploaded by the user such as profile picture
+# will be stored here
+MEDIA_DIR = Path.joinpath(BASE_DIR, 'media')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -51,6 +56,7 @@ INSTALLED_APPS = [
     'level_two',
     'level_three',
     'level_four',
+    'level_five'
 ]
 
 MIDDLEWARE = [
@@ -95,6 +101,14 @@ DATABASES = {
     }
 }
 
+PASSWORD_HASHERS = [
+    "django.contrib.auth.hashers.Argon2PasswordHasher",
+    "django.contrib.auth.hashers.PBKDF2PasswordHasher",
+    "django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher",
+    "django.contrib.auth.hashers.BCryptSHA256PasswordHasher",
+    "django.contrib.auth.hashers.ScryptPasswordHasher",
+]
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -105,6 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'OPTIONS': {'min_length':9},
     },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
@@ -136,6 +151,9 @@ STATICFILES_DIRS = [
     BASE_STATIC_DIR,
 
 ]
+
+MEDIA_ROOT = MEDIA_DIR
+MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
