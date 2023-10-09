@@ -69,3 +69,21 @@ Use the below Syntax :*
     		model = MyModel
     		fields = ("field1", "field2")
     ```
+---
+
+#### Different Syntax methods of using URLs in our templates (HTML Files)
+Currently using method in HTML File (Static path) <br>
+`<a href="basicapp/thankyou"> Thank You </a>`
+
+**Different method Relative URLs can be used in Template tags**
+**Option 1:** name="thanku" is in the urls.py file of your application :--> <br>
+<a href="{% url 'thanku'%}"> Thank You </a>`
+
+**Suggested Method : Option 2:** This method requires that app_name variable to be created inside the urls.py file! :--> <br>
+`<a href="{% url 'app_four_application:relative'%}"> Thank You </a>`
+
+```
+Note : 
+app_four_application --> is the app_name
+relative --> is the var=name in urlpatterns
+```
