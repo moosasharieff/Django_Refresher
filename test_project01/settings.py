@@ -20,6 +20,7 @@ HOME_TEMPLATE_DIR = Path.joinpath(BASE_DIR, 'templates')
 TP01_APP1_TEMPLATE_DIR = Path.joinpath(BASE_DIR, 'level_one/templates')
 LEVEL_TWO = Path.joinpath(BASE_DIR, 'level_two/templates')
 LEVEL_THREE = Path.joinpath(BASE_DIR, 'level_three/templates')
+LEVEL_FOUR = Path.joinpath(BASE_DIR, 'level_four/templates')
 
 # Static Directories
 TP01_APP1_STATIC_DIR = Path.joinpath(BASE_DIR, 'level_one/static')
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
     'level_one',
     'level_two',
     'level_three',
+    'level_four',
 ]
 
 MIDDLEWARE = [
@@ -66,7 +68,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [HOME_TEMPLATE_DIR, TP01_APP1_TEMPLATE_DIR, LEVEL_TWO,
-                 LEVEL_THREE, ],
+                 LEVEL_THREE, LEVEL_FOUR, ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
