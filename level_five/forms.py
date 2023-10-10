@@ -16,7 +16,7 @@ class UserForm(forms.ModelForm):
         fields = ('username', 'password', 'email')
 
 
-class UserProfileInfoModel(form.ModelForm):
+class UserProfileInfoForm(form.ModelForm):
     """ Creates a ModelForm for extended attributes in the db for 'profile_site' and 'profile_pic'  """
     class Meta():
         model = UserProfileInfo

@@ -10,7 +10,7 @@ class UserProfileInfo(models.Model):
 
     # Adding attributes (Making this optional for user to add)
     profile_site = models.URLField(blank=True)
-    profile_pic = models.ImageField(blank=True, upload_to='profile_pics') # inside dir: 'media'
+    profile_pic = models.ImageField(blank=True, upload_to='profile_pic') # inside dir: 'media'
 
 
     def __str__(self):
