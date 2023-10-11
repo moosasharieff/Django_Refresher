@@ -7,7 +7,7 @@ from level_five.forms import UserForm, UserProfileInfoForm
 # Create index view
 def index(request):
     """ This is the initial page for the user to view Django Framework of level 5. """
-    return render(request, 'templates/index.html')
+    return render(request, 'level_five_index.html')
 
 
 # Create registration view
@@ -42,11 +42,11 @@ def register(request):
             print(user_form.errors, user_profile_form.errors)
     else:
         user_form = UserForm()
-        profile_form = UserProfileInfoForm
+        user_profile_form = UserProfileInfoForm()
 
-    return render(request, 'templates/register.html',
+    return render(request, 'registration.html',
                   {'registered': registered,
                    'user_form': user_form,
-                   'profile_form': profile_form})
+                   'user_profile_form': user_profile_form})
 
 # Create Login view

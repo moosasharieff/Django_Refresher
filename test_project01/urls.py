@@ -26,6 +26,7 @@ urlpatterns = [
     path("project_prefix/", include('level_one.urls')),
     path("level_two/", include('level_two.urls')),
     path("level_three/", include('level_three.urls')),
-    path("level_four/", include('level_four.urls'))
+    path("level_four/", include('level_four.urls')),
+    path('level_five/', include('level_five.urls'))
 
 ]
