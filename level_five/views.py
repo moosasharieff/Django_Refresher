@@ -1,11 +1,16 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from level_five.forms import UserForm, UserProfileInfoForm
 
+# Imports for creating Login view
+from django.contrib.auth import authenticate, login, logout
+from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
+from django.urls import reverse
 
 # Create your views here.
 
 # Create index view
-def index(request):
+def level_index(request):
     """ This is the initial page for the user to view Django Framework of level 5. """
     return render(request, 'level_five_index.html')
 
@@ -50,3 +55,38 @@ def register(request):
                    'user_profile_form': user_profile_form})
 
 # Create Login view
+def user_login(request):
+
+    if request.method == "POST":
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(username=username, password=password)
+
+        if user:
+            if user.is_active:
+                login(request, user)
+                # We're redirected to a page when func : 'index' lands
+                # return HttpResponseRedirect(reverse('level_index'))
+                # return redirect(level_index(request))
+                return render(request, 'level_five_index.html')
+            else:
+                return HttpResponse("ACCOUNT NOT ACTIVE")
+
+        else:
+            print("Someone tried to login and failed")
+            print(f"Username: {username} and Password: {password} was used")
+            return HttpResponse("invalid login details were provided!")
+    else:
+        return render(request, "login.html")
+
+
+def user_logout(request):
+    logout(request)
+    return render(request, 'level_five_index.html')
+    # return redirect(level_index)
+    # return HttpResponseRedirect(revese('level_index'))
+
+@login_required
+def special(request):
+    return HttpResponse("Your are logged in!")

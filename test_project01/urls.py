@@ -19,6 +19,7 @@ from django.urls import path
 # from level_one import views as app1_views
 from django.conf.urls import include
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', app1_views.index, name="main-view")

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block body_block %}
+
+<div class="jumbotron">
+    <h1>Login Here :</h1>
+        <!-- We are connecting to the name='login' in urls.py file -->
+        <form action="{% url 'level_five_app:login' %}" method="post">
+            {% csrf_token %}
+            <label for="username">Username :</label>
+            <input type="text" name="username" placeholder="Enter your username">
+
+            <label for="password">Password :</label>
+            <input type="password" name="password">
+
+            <input type="submit" value="Login">
+        </form>
+
+</div>
+
+
+{% endblock %}
